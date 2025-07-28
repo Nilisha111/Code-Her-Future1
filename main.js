@@ -112,7 +112,8 @@ let toggleCamera = async (e) => {
     } else {
         await localTracks[1].setMuted(true);
         btn.innerHTML = '<i class="fas fa-video-slash"></i>';
-        btn.style.backgroundColor = '#EE4B2B';
+        btn.style.backgroundColor = '#EE4B2B';document.getElementById("join-btn").addEventListener("click", function () {
+  window.location.href = "join.html";
     }
 };
 
