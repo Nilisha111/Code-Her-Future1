@@ -22,7 +22,7 @@ if (!TOKEN) {
 
 document.getElementById('room-name-display').innerText = `Room: ${CHANNEL}`;
 
-const client = AgoraRTC.createClient({ mode: 'rtc', codec: 'vp8' });
+const client = agoraRTC.createClient({ mode: 'rtc', codec: 'vp8' });
 
 let localTracks = [];
 let remoteUsers = {};
@@ -32,7 +32,7 @@ let joinAndDisplayLocalStream = async () => {
     client.on('user-left', handleUserLeft);
 
     let UID = await client.join(APP_ID, CHANNEL, TOKEN, null);
-    localTracks = await AgoraRTC.createMicrophoneAndCameraTracks();
+    localTracks = await agoraRTC.createMicrophoneAndCameraTracks();
 
     let player = `
         <div class="video-container" id="user-container-${UID}">
